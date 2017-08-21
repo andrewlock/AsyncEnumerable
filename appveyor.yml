@@ -15,11 +15,11 @@ dotnet_csproj:
   package_version: '{version}'
 
 artifacts:
-  - path: '*.nupkg'
+  - path: 'artifacts/*.nupkg'
 
 test_script: 
   cmd: >-
     dotnet test AsyncEnumerable.UnitTests\AsyncEnumerable.UnitTests.csproj
 
 after_test:
-  - dotnet pack --no-build
+  - dotnet pack --no-build -o artifacts
